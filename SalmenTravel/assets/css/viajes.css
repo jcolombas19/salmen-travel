@@ -1,0 +1,294 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: all .22s ease;
+}
+
+.londrina-solid-thin {
+  font-family: "Londrina Solid", sans-serif;
+  font-weight: 100
+}
+
+.londrina-solid-light {
+  font-family: "Londrina Solid", sans-serif;
+  font-weight: 300
+}
+
+.londrina-solid-regular {
+  font-family: "Londrina Solid", sans-serif;
+  font-weight: 400
+}
+
+.londrina-solid-black {
+  font-family: "Londrina Solid", sans-serif;
+  font-weight: 900
+}
+
+/* =========================
+            BODY
+   ========================= */
+
+body {
+  background-color: #EDE5D0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #222;
+}
+
+.contenido {
+  margin: 40px auto 80px;
+  max-width: 1200px;
+  padding: 0 16px;
+}
+
+.col-12.col-md-11.col-lg-10 {
+  margin: 0 auto
+}
+
+/* =========================
+   TÍTULO DE LA PÁGINA
+   ========================= */
+   
+.Título {
+  margin-top: 2px;
+  text-align: center
+}
+
+.titulo {
+  font-family: "Londrina Solid", cursive;
+  font-weight: 400;
+  font-size: 64px;
+  color: #222;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, .6);
+  margin-bottom: 12px;
+}
+
+.tarjetaViaje {
+  background: #EFE2C2;
+  border-radius: 14px;
+  box-shadow: 0 8px 0 rgba(0, 0, 0, .06), 0 10px 20px rgba(0, 0, 0, .05);
+  min-height: 460px;
+  padding: 28px;
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, .03);
+}
+
+/* =========================
+   BOTÓN CREAR VIAJE
+   ========================= */
+.botón {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  background: #6C8E6B;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 10px;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, .08);
+  text-decoration: none;
+  font-family: "Londrina Solid", cursive;
+  font-size: 22px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: none;
+}
+
+.botón:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 rgba(0, 0, 0, .1)
+}
+
+.ícono {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  filter: drop-shadow(0 1px 0 rgba(0, 0, 0, .12));
+}
+
+/* =========================
+   CABECERA DE LAS COLUMNAS
+   ========================= */
+.columnasInfo {
+  margin-top: 48px;
+  padding: 10px 20px;
+  color: #2b2b2b;
+  font-family: "Londrina Solid", cursive;
+  font-size: 23px;
+
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 120px;
+  gap: 12px;
+}
+
+.columnasInfo,
+.InfoContenido,
+.travel-row {
+  min-width: 700px;
+}
+
+.InfoContenido {
+  margin-top: 28px;
+  min-height: 260px;
+  max-height: 360px;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  padding-right: 8px;
+  scrollbar-gutter: stable;
+}
+
+/* =========================
+   SCROLLBAR
+   ========================= */
+
+.InfoContenido::-webkit-scrollbar {
+  width: 8px;
+}
+
+.InfoContenido::-webkit-scrollbar-thumb {
+  background: #b8a88a;
+  border-radius: 10px;
+}
+
+.InfoContenido::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.empty-text {
+  font-family: "Londrina Solid", cursive;
+  font-size: 28px;
+  color: #2b2b2b;
+  text-align: center;
+  line-height: 1.2;
+}
+
+/* =========================
+   FILAS DE VIAJES
+   ========================= */
+.travel-row {
+  cursor: pointer;
+
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 120px;
+  align-items: center;
+
+  background: #f8f5ec;
+  border-radius: 14px;
+  padding: 14px 20px;
+  margin-bottom: 14px;
+
+  font-size: 22px;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, .05);
+}
+
+.travel-row:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 rgba(0, 0, 0, .08);
+}
+
+.destino {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.flag {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 10px;
+  background: #ddd;
+}
+
+.travel-row>div:nth-child(2),
+.travel-row>div:nth-child(3) {
+  font-size: 16px;
+}
+
+/* =========================
+   BOTONES DE ACCIONES DE VIAJE
+   ========================= */
+
+.acciones {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+
+.acciones button {
+  background: none;
+  border: none;
+  padding: 0;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+
+  opacity: 0.45;
+  cursor: pointer;
+
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.acciones button:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+/* Tamaño del icono */
+.acciones button img {
+  width: 30px;
+  height: 30px;
+  display: block;
+  pointer-events: none;
+}
+
+/* =========================
+   SCROLLBAR DE LA TABLA
+   ========================= */
+
+.tabla-scroll {
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.columnasInfo,
+.travel-row {
+  min-width: 700px;
+}
+
+.tabla-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.tabla-scroll::-webkit-scrollbar-thumb {
+  background: #b8a88a;
+  border-radius: 10px;
+}
+
+a {
+  color: inherit
+}
+
+p {
+  line-height: 1.35
+}
+
+img {
+  display: inline-block;
+  max-width: 100%
+}
+
+@media (max-width: 768px) {
+  .InfoContenido {
+    max-height: 260px;
+  }
+}

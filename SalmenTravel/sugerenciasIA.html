@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SalmenTravel+ - Sugerencias IA</title>
+
+    <!-- Icono de SalmenTavel+ en el navegador -->
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/images/SalmenTravelLogoNaranja.png">
+
+    <!-- Fuentes usados en la web -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chela+One&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Josefin+Sans:ital@0;1&family=Londrina+Solid:wght@100;300;400;900&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS de Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/home.css">
+    <link rel="stylesheet" href="./assets/css/menu.css">
+    <link rel="stylesheet" href="./assets/css/sugerenciasIA.css">
+
+    <!-- JS -->
+    <script src="assets/js/menuArriba.js" type="module"></script>
+
+    <script type="importmap">
+        {
+            "imports": {
+            "@google/generative-ai": "https://esm.run/@google/generative-ai",
+            "marked": "https://esm.run/marked"
+            }
+        }
+    </script>
+
+    <script type="module" src="./assets/js/aiSuggestions.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <section class="header-container">
+
+            <!-- ICONO HAMBURGUESA (solo aparece en pantallas pequeñas) -->
+            <div id="hamburguer" class="menu-icon">
+                <img src="assets/images/hamburger_menu.png" alt="menú hamburguesa">
+            </div>
+
+            <!-- NAV NORMAL (en tamaño móvil se oculta) -->
+            <nav id="mainNav">
+                <a href="home.html">Home</a>
+                <a href="viajes.html">Viajes</a>
+                <a href="clima.html">Clima</a>
+                <a href="aboutUs.html">Sobre Nosotros</a>
+                <a href="sugerenciasIA.html">Sugerencias con IA</a>
+            </nav>
+
+            <a href="home.html">
+                <img src="assets/images/SalmenTravelLogo.png" alt="Logo de salmen travel">
+            </a>
+        </section>
+
+        <!-- MENÚ DESPLEGABLE MÓVIL -->
+        <section id="menu" class="mobile-menu">
+
+            <button id="closeMenuButton" class="close-btn">
+                <img src="assets/images/x_cerrar_menu.png" alt="Cerrar menú">
+            </button>
+
+            <a href="home.html">Home</a>
+            <a href="viajes.html">Viajes</a>
+            <a href="clima.html">Clima</a>
+            <a href="aboutUs.html">Sobre Nosotros</a>
+            <a href="sugerenciasIA.html">Sugerencias con IA</a>
+        </section>
+    </header>
+
+    <main>
+        <div class="content">
+            <div class="Título">
+                <h1>Sugerencias con IA</h1>
+            </div>
+
+            <div class="chat-bot">
+                <div class="chat-card" id="chatCard">
+
+                    <div class="card-face card-front">
+                        <button id="botButton" class="bot-button">
+                            <img src="assets/images/Salmen_salmon1.gif" alt="Iniciar chat con IA" title="¡Haz click sobre mi para ver el chat!">
+                        </button>
+                    </div>
+
+                    <div class="card-face card-back">
+                        <div class="chat-header">
+                            <h3>Chat con Salmen</h3>
+                            <button id="closeButton" class="close-btn"><img src="assets/images/x_cerrar_menu.png"
+                                    alt="Cerrar chat"></button>
+                        </div>
+
+                        <div class="chat-body" id="chatWindow">
+                            <div class="message ai">
+                                <p class="introduction">¡Hola! Soy Salmen 🐟</p>
+                                <p>¿Buscas aventura o relax? ¡Dime qué te gusta! 🌍</p>
+                                <p class="timestamp">Ahora</p>
+                            </div>
+
+                            <div class="typing-indicator" id="typingIndicator">
+                                Salmen está escribiendo...
+                            </div>
+
+                        </div>
+
+                        <div class="chat-footer">
+                            <input type="text" id="userInput" placeholder="Escribe aquí... (ej. Playa en México)">
+                            <button id="sendBtn">Enviar</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>

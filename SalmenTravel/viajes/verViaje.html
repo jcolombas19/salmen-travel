@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SalmenTravel+ - Mi Viaje</title>
+
+    <!-- Icono de SalmenTavel+ en el navegador -->
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/images/SalmenTravelLogoNaranja.png">
+
+    <!-- Fuentes usados en la web -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chela+One&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Josefin+Sans:ital@0;1&family=Londrina+Solid:wght@100;300;400;900&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS de Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/viajes/verViaje.css">
+    <link rel="stylesheet" href="../assets/css/menu.css">
+    <link rel="stylesheet" href="../assets/css/utils/popup.css">
+
+    <!-- JS -->
+    <script src="../assets/js/utils/popup.js" type="module"></script>
+    <script src="../assets/js/viajes/verViaje.js" type="module"></script>
+    <script src="../assets/js/menuArriba.js" type="module"></script>
+
+</head>
+
+
+<body>
+
+    <!-- Modal Añadir Actividad -->
+    <div id="activityModal" class="modal-overlay hidden" aria-hidden="true">
+        <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <!-- Título del modal -->
+            <h3 id="modalTitle" class="modal-title">Asigna una actividad</h3>
+            <!-- label del nombre de la actividad -->
+            <label class="modal-label" for="modalActivityName">Nombre de la actividad</label>
+            <input id="modalActivityName" type="text" class="modal-input" placeholder="Ej: Torre Eiffel">
+
+            <!-- Nueva fila del modal -->
+            <div class="modal-row">
+                 <!-- En esta columna se coloca la hora de inicio -->
+                <div class="modal-col">
+                    <label class="modal-label" for="modalHoraInicio">Hora de inicio</label>
+                    <input id="modalHoraInicio" type="time" class="modal-input">
+                </div>
+                <!-- En esta otra se coloca la hora final -->
+                <div class="modal-col">
+                    <label class="modal-label" for="modalHoraFin">Hora final</label>
+                    <input id="modalHoraFin" type="time" class="modal-input">
+                </div>
+            </div>
+
+            <!-- Botones de cancelar u añadir la actividad -->
+            <div class="modal-actions">
+                <button type="button" id="modalCancel" class="modal-btn cancel">Cancelar</button>
+                <button type="button" id="modalSave" class="modal-btn save">Añadir actividad</button>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <section class="header-container">
+            <!-- ICONO HAMBURGUESA (solo aparece en pantallas pequeñas) -->
+            <div id="hamburguer" class="menu-icon">
+                <img src="../assets/images/hamburger_menu.png" alt="menú hamburguesa">
+            </div>
+
+            <!-- NAV NORMAL (en tamaño móvil se oculta) -->
+            <nav id="mainNav">
+                <a href="../home.html">Home</a>
+                <a href="../viajes.html">Viajes</a>
+                <a href="../clima.html">Clima</a>
+                <a href="../aboutUs.html">Sobre Nosotros</a>
+                <a href="../sugerenciasIA.html">Sugerencias con IA</a>
+            </nav>
+
+            <a href="../home.html">
+                <img src="../assets/images/SalmenTravelLogo.png" alt="Logo de salmen travel">
+            </a>
+        </section>
+
+        <!-- MENÚ DESPLEGABLE MÓVIL -->
+        <section id="menu" class="mobile-menu">
+            <button id="closeMenuButton" class="close-btn">
+                <img src="../assets/images/x_cerrar_menu.png" alt="Cerrar menú">
+            </button>
+
+            <a href="../home.html">Home</a>
+            <a href="../viajes.html">Viajes</a>
+            <a href="../clima.html">Clima</a>
+            <a href="../aboutUs.html">Sobre Nosotros</a>
+            <a href="../sugerenciasIA.html">Sugerencias con IA</a>
+        </section>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL DE LA PÁGINA -->
+    <main class="py-5">
+        <div class="container">
+
+            <!-- Botón para volver a la página de viajes -->
+            <a href="../viajes.html" class="volver mb-4 d-inline-flex align-items-center gap-2">
+                <img src="../assets/images/back_2099238.png" alt="">
+                Volver a tus viajes
+            </a>
+
+            <!-- CARD DE VIAJE -->
+            <section class="tarjetaViaje p-4">
+
+                <!-- HEADER DEL VIAJE -->
+                <section class="tarjetaTitulo row align-items-center g-4 mb-4">
+                    <!-- IMAGEN DE PORTDADA -->
+                    <div class="col-12 col-md-auto d-flex justify-content-center">
+                        <img class="flag-grande">
+                    </div>
+                    <!-- TÍTULO DE VIAJE -->
+                     <!-- se modifica en el JavaScrpit -->
+                    <div class="col-12 col-md">
+                        <h1 class="tituloViaje mb-3"></h1>
+                    </div>
+                    <!-- FECHAS DEL VIAJE -->
+                    <div class="col-12 d-flex justify-content-center">
+                        <div class="fechasViaje"></div>
+                    </div>
+                </section>
+
+                <!-- SECCIÓN DE LAS ACTIVIDADES -->
+                <section class="container-fluid actividades-section">
+
+                    <!-- HEADER DE LAS ACTIVIDADES -->
+                     <!-- se modifica en el JavaScrpit -->
+                    <div class="actividades-header text-center">
+                        <h2>Actividades en <span class="ciudad"></span></h2>
+                    </div>
+                    
+                    <!-- CONTENIDO DE LAS ACTIVIDADES -->
+                     <!-- se modifica en el JavaScrpit -->
+                    <div id="activitiesContent" class="contenidoActividades">
+                    </div>
+                </section>
+
+                <!-- BOTONES AL FINAL DE LA PÁGINA -->
+                <div class="accionesFinales d-flex flex-column flex-md-row justify-content-center gap-3 mt-4">
+                    <!-- BOTÓN PARA EDITAR VIAJE -->
+                    <button class="editar">
+                        <img src="../assets/images/pen.png" alt="">
+                        Editar viaje
+                    </button>
+                    <!-- BOTÓN PARA BORRAR VIAJE -->
+                    <button class="eliminar">
+                        <img src="../assets/images/trash.png" alt="">
+                        Eliminar viaje
+                    </button>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+
+</html>

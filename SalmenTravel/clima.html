@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SalmenTravel+ - Clima General</title>
+
+    <!-- Icono de SalmenTavel+ en el navegador -->
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/images/SalmenTravelLogoNaranja.png">
+    
+    <!-- CSS de Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    
+    <!-- Fuentes usados en la web -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Chela+One&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Josefin+Sans:ital@0;1&family=Londrina+Solid:wght@100;300;400;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jaini+Purva&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/clima.css">
+    <link rel="stylesheet" href="./assets/css/menu.css">
+    
+    <!-- JS -->
+    <script src="assets/js/menuArriba.js" type="module"></script>
+    <script src="assets/js/clima.js" type="module"></script>
+</head>
+
+<body>
+    <header>
+        <section class="header-container">
+
+            <!-- ICONO HAMBURGUESA (solo aparece en pantallas pequeñas) -->
+            <div id="hamburguer" class="menu-icon">
+                <img src="assets/images/hamburger_menu.png" alt="menú hamburguesa">
+            </div>
+
+            <!-- NAV NORMAL (en tamaño móvil se oculta) -->
+            <nav id="mainNav">
+                <a href="home.html">Home</a>
+                <a href="viajes.html">Viajes</a>
+                <a href="clima.html">Clima</a>
+                <a href="aboutUs.html">Sobre Nosotros</a>
+                <a href="sugerenciasIA.html">Sugerencias con IA</a>
+            </nav>
+
+            <a href="home.html">
+                <img src="assets/images/SalmenTravelLogo.png" alt="Logo de salmen travel">
+            </a>
+        </section>
+
+        <!-- MENÚ DESPLEGABLE MÓVIL -->
+        <section id="menu" class="mobile-menu">
+
+            <button id="closeMenuButton" class="close-btn">
+                <img src="assets/images/x_cerrar_menu.png" alt="Cerrar menú">
+            </button>
+
+            <a href="home.html">Home</a>
+            <a href="viajes.html">Viajes</a>
+            <a href="clima.html">Clima</a>
+            <a href="aboutUs.html">Sobre Nosotros</a>
+            <a href="sugerenciasIA.html">Sugerencias con IA</a>
+        </section>
+    </header>
+
+    <main class="container-fluid d-flex flex-column align-items-center clima-main">
+
+        <section class="clima-section">
+
+            <!-- HEADER de la página-->
+            <div class="clima-header">
+                <h2>El clima en tus destinos</h2>
+            </div>
+
+            <!-- CONTENIDO de la parte del clima, que incluye tarjetas con información dentro de estas-->
+            <div class="clima-content">
+
+                <!-- Contenido de la tarjeta si no hay ningún viaje creado-->
+                <section id="no-viajes" class="empty-clima">
+                    <div class="empty-clima-content">
+                        <p class="empty-clima-text">
+                            Añade tu primer viaje y descubre qué tiempo hace allí
+                        </p>
+                        <a href="viajes.html" class="boton-clima">Ir a viajes</a>
+                    </div>
+                </section>
+
+                <!-- Contenido de la tarjeta si hay ningún viaje creado -->
+                <section id="con-viajes" class="clima-viajes hidden">
+                    <!-- En base a la información que el usuario introduzca en el apartado de viajes, en el JS de clima, 
+                         se van creando tarjetas con diferentes elementos. -->
+                    <div class="viajes-lista d-flex flex-column gap-4 mt-4" id="viajesLista"></div>
+                </section>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>

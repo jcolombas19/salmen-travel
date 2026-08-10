@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SalmenTravel+ - Crear viaje</title>
+
+    <!-- Icono de SalmenTavel+ en el navegador -->
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/images/SalmenTravelLogoNaranja.png">
+
+    <!-- Fuentes usados en la web -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chela+One&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Josefin+Sans:ital@0;1&family=Londrina+Solid:wght@100;300;400;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Datepicker CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.4/dist/css/datepicker-bs5.min.css"
+        rel="stylesheet">
+
+    <!-- CSS -->    
+    <link rel="stylesheet" href="/assets/css/reset.css">
+    <link rel="stylesheet" href="/assets/css/viajes/nuevoViaje.css">
+    <link rel="stylesheet" href="/assets/css/menu.css">
+    <link rel="stylesheet" href="/assets/css/utils/popup.css">
+
+    <!-- JS -->
+    <script src="/assets/js/utils/popup.js" type="module"></script>
+    <script src="/assets/js/viajes/nuevoViaje.js" type="module"></script>
+    <script src="/assets/js/menuArriba.js" type="module"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Datepicker JS -->
+    <script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.4/dist/js/datepicker-full.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <section class="header-container">
+            <!-- ICONO HAMBURGUESA (solo aparece en pantallas pequeñas) -->
+            <div id="hamburguer" class="menu-icon">
+                <img src="../assets/images/hamburger_menu.png" alt="menú hamburguesa">
+            </div>
+
+            <!-- NAV NORMAL (en tamaño móvil se oculta) -->
+            <nav id="mainNav">
+                <a href="../home.html">Home</a>
+                <a href="../viajes.html">Viajes</a>
+                <a href="../clima.html">Clima</a>
+                <a href="../aboutUs.html">Sobre Nosotros</a>
+                <a href="../sugerenciasIA.html">Sugerencias con IA</a>
+            </nav>
+
+            <a href="../home.html">
+                <img src="../assets/images/SalmenTravelLogo.png" alt="Logo de salmen travel">
+            </a>
+        </section>
+
+        <!-- MENÚ DESPLEGABLE MÓVIL -->
+        <section id="menu" class="mobile-menu">
+            <button id="closeMenuButton" class="close-btn">
+                <img src="../assets/images/x_cerrar_menu.png" alt="Cerrar menú">
+            </button>
+
+            <a href="../home.html">Home</a>
+            <a href="../viajes.html">Viajes</a>
+            <a href="../clima.html">Clima</a>
+            <a href="../aboutUs.html">Sobre Nosotros</a>
+            <a href="../sugerenciasIA.html">Sugerencias con IA</a>
+        </section>
+    </header>
+
+    <h1 id="pageTitle">Prepara tu Viaje</h1>
+
+    <main class="py-5">
+
+        <!--  Envoltorio para el scroll horizontal -->
+        <section class="notebook-scroll">
+
+            <div class="notebook-wrapper">
+
+                <!-- Capas traseras de la libreta -->
+                <div id="cover-green" class="cover-page"></div>
+                <div id="cover-light" class="cover-page"></div>
+                <div id="cover-beige" class="cover-page"></div>
+
+                <!-- Página superior -->
+                <div id="cover-top" class="cover-page">
+
+                    <div class="pages-inside">
+
+                        <!-- Página izquierda de la libreta -->
+                        <section class="page-left">
+
+                            <div class="page-left-header">
+                                <a href="#" id="buttonBack" class="volver">
+                                    <img src="../assets/images/back_2099238.png" alt="">
+                                    <span id="buttonBackText">Volver a tus viajes</span>
+                                </a>
+                            </div>
+
+
+                            <div class="page-left-content">
+                                <!-- PRIMERA PARTE DEL FORMULARIO -->
+                                <!-- Paso 1: Destino (izq) + Fechas (der) -->
+                                <form id="form1left" class="form-section step step-1">
+                                    <div class="stack gap-12">
+                                        <label for="destino" class="label">¿Adónde te gustaría ir?</label>
+                                        <input type="text" id="destino" class="text"
+                                            placeholder="Ciudad o lugar (ej. Madrid)" required />
+
+                                        <label for="paisDestino" class="label">¿De qué país?</label>
+                                        <select id="paisDestino" class="text" disabled required>
+                                            <option value="">Selecciona un país</option>
+                                        </select>
+
+                                    </div>
+
+                                    <img class="plane" src="/assets/images/plane.png" alt="sello avión">
+                                </form>
+
+                                <!-- SEGUNDA PARTE DEL FORMULARIO -->
+                                <!-- Formulario 2: Lista del día (izq) + Añadir actividad (der) -->
+                                <form id="form2left" class="form-section step step-2 hidden" aria-live="polite">
+                                    <div class="stack gap-12">
+
+                                        <label for="diaSelect" class="label">Selecciona un día del viaje</label>
+                                        <select id="diaSelect" class="text"></select>
+
+                                        <div class="subsection">
+                                            <h3 class="subtitulo">Actividades en ese día</h3>
+                                            <div class="day-activities">
+                                                <ul id="activitiesList" class="activities-list"></ul>
+                                                <p id="emptyActivities" class="muted">
+                                                    No hay actividades para este día.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+
+
+                                <!-- TERCERA PARTE DEL FORMULARIO -->
+                                <!-- Formulario 3: Portada (izq) + Imagen de SalmenTravel (der) -->
+                                <form id="form3left" class="form-section step step-3 hidden">
+                                    <div class="upload-area">
+                                        <div class="upload-copy">
+                                            <img src="../assets/images/back_2099238.png" alt="" class="icon-ghost">
+                                            <h2>Cada viaje empieza con una portada…¿Cuál será la
+                                                tuya?</h2>
+                                        </div>
+
+                                        <label for="portada" class="dropzone">
+                                            <input id="portada" type="file" accept="image/*" hidden>
+                                            <div class="dz-inner">
+                                                <img src="/assets/images/add-image.png" alt="" class="dz-icon">
+                                                <span>Sube una imagen o haz clic aquí</span>
+                                            </div>
+                                        </label>
+
+                                        <div class="preview-wrapper">
+                                            <h2>Previsualización de la portada</h2>
+                                            <img id="previewWrapper" src="/assets/images/SalmenTravelLogoNaranja.png"
+                                                alt="Previsualización de portada">
+                                        </div>
+
+                                        <div class="actions">
+                                            <button type="button" id="btnFinalizar" class="button continue">Finalizar
+                                                viaje</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </section>
+
+                        <!-- Página derecha -->
+                        <section class="page-right">
+                            <!-- PRIMERA PARTE DEL FORMULARIO -->
+                            <form id="form1right" class="form-section step step-1">
+                                <div class="stack gap-12">
+                                    <label class="label">Fechas del viaje</label>
+
+                                    <div id="dateRange" class="date-range">
+                                        <input type="text" id="fechaIda" class="text" placeholder="Ida" required />
+                                        <input type="text" id="fechaVuelta" class="text" placeholder="Vuelta"
+                                            required />
+                                    </div>
+                                </div>
+
+                                <div class="actions">
+                                    <button type="button" id="primeraPagina" class="button continue">Siguiente
+                                        página</button>
+                                </div>
+                            </form>
+
+
+                            <!-- SEGUNDA PARTE DEL FORMULARIO -->
+                            <form id="form2right" class="form-section step step-2 hidden">
+                                <div class="stack gap-12">
+                                    <label for="activityName" class="label">Escribe una actividad</label>
+                                    <input type="text" id="activityName" class="text" />
+
+                                    <div class="grid-2 gap-12">
+                                        <div>
+                                            <label for="horaInicio" class="label">Hora de inicio</label>
+                                            <input type="time" id="horaInicio" class="text" />
+                                        </div>
+                                        <div>
+                                            <label for="horaFin" class="label">Hora final</label>
+                                            <input type="time" id="horaFin" class="text" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="actionsSplit">
+                                    <button type="button" id="addActivityButton" class="button addActivity">Añadir
+                                        actividad</button>
+                                    <p></p>
+                                    <button type="button" id="buttonForm2" class="button continue">Siguiente
+                                        página</button>
+                                </div>
+                            </form>
+
+
+                            <!-- TERCERA PARTE DEL FORMULARIO -->
+                            <form id="form3right" class="form-section step step-3 hidden">
+                                <div class="stack gap-12">
+                                    <div class="salmenTravelLogo">
+                                        <img id="logo" src="/assets/images/SalmenTravelLogoNaranja.png"
+                                            alt="logo de Salmentravel">
+                                    </div>
+                                </div>
+                            </form>
+
+                        </section>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+</body>
+
+</html>

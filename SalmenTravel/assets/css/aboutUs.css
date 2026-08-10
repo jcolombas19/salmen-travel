@@ -1,0 +1,403 @@
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        transition: all 0.3s ease;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        background-color: #EDE5D0;
+        font-family: "Londrina Solid", sans-serif;
+    }
+
+    /* --- SCROLL OFFSETS --- */
+    #about-section,
+    #mission-section,
+    #team-section,
+    #contact-section {
+        scroll-margin-top: 140px;
+    }
+
+    /* --- MAIN CONTENT --- */
+    .content {
+        margin: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .content .Título h1 {
+        font-weight: 400;
+        font-size: 64px;
+    }
+
+    /* --- NAV ABOUT US ---  */
+    .content .NavAU {
+        margin-top: 40px;
+        display: flex;
+        gap: 30px;
+    }
+
+    .NavAU a {
+        text-decoration: none;
+    }
+
+    .NavAU button {
+        background-color: #B86954;
+        border: none;
+        border-radius: 20px;
+        padding: 15px 30px;
+        font-size: 24px;
+        color: white;
+        font-family: inherit;
+        cursor: pointer;
+        box-shadow: grey 2px 2px 5px;
+    }
+
+    .NavAU button:hover {
+        background-color: #A0523D;
+        transform: scale(1.05);
+    }
+
+    /* --- INFO CARDS --- */
+    .content .info-card {
+        position: relative;
+        width: 90%;
+        max-width: 500px;
+        background-color: #EFE2C2;
+        border-radius: 20px;
+        overflow: visible;
+        margin-top: 100px;
+        box-shadow: grey 2px 2px 10px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .content .info-card:hover {
+        transform: scale(1.015);
+    }
+
+    /* --- CARD HEADER + CLIP encima de los headers ---  */
+    .content .card-header {
+        position: relative;
+        background-color: #B86954;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        font-size: 22px;
+        border-radius: 20px 20px 0 0;
+        letter-spacing: 0.5px;
+        z-index: 2;
+    }
+
+    .content .card-header::before {
+        content: "";
+        position: absolute;
+        top: -40px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 60px;
+        background-image: url("../images/clip.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        z-index: 10;
+        pointer-events: none;
+        filter: drop-shadow(0 3px 5px rgba(0,0,0,0.25));
+    }
+
+    /* --- CARD BODY --- */
+    .content .card-body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 30px;
+    }
+
+    .flex-col {
+        flex-direction: column;
+    }
+
+    .gap-20 {
+        gap: 20px;
+    }
+
+    /* --- TEXT BOX --- */
+    .content .text-box {
+        font-size: 20px;
+        line-height: 1.6;
+        background-color: #F6F1E7;
+        border-radius: 15px;
+        text-align: justify;
+        padding: 25px;
+        width: 100%;
+        box-shadow: grey 1px 1px 5px;
+    }
+
+    .espacio-abajo {
+        margin-bottom: 30px;
+    }
+
+    /* --- MISSION & VISION --- */
+
+    .content .mission-card,
+    .content .vision-card {
+        background-color: #F6F1E7;
+        border-radius: 15px;
+        box-shadow: grey 1px 1px 5px;
+        text-align: center;
+        overflow: hidden;
+        width: 90%;
+        max-width: 500px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .content .mission-title,
+    .content .vision-title {
+        background-color: #6C8E6B;
+        color: white;
+        padding: 20px;
+    }
+
+    .content .mission-title h3,
+    .content .vision-title h3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        font-size: 28px;
+    }
+
+    .content .mission-title h3::before {
+        content: "🎯";
+        font-size: 36px;
+    }
+
+    .content .vision-title h3::before {
+        content: "🌍";
+        font-size: 36px;
+    }
+
+    .content .mission-text,
+    .content .vision-text {
+        font-size: 20px;
+        line-height: 1.5;
+        padding: 25px;
+    }
+
+    /* --- TEAM SECTION --- */
+    .content .team-members-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+        width: 100%;
+    }
+
+    .content .member-card {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 24px;
+
+        width: 85%;
+        max-width: 420px;
+        padding: 18px 22px;
+
+        background-color: #6C8E6B;
+        border-radius: 20px;
+        box-shadow: 3px 4px 10px rgba(0,0,0,0.18);
+
+        font-size: 20px;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .content .member-card h4 {
+        color: white;
+    }
+
+    .content .member-card:hover {
+        transform: translateY(-4px) rotate(-0.5deg);
+        box-shadow: 6px 8px 18px rgba(0,0,0,0.25);
+    }
+
+    .content .member-card:nth-child(odd) {
+        align-self: flex-start;
+    }
+
+    .content .member-card:nth-child(even) {
+        align-self: flex-end;
+    }
+
+    .content .member-card img {
+        width: 90px;
+        height: 90px;
+        object-fit: cover;
+        background-color: #fff;
+        border-radius: 18px;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+    }
+
+    /* --- FORM --- */
+    .content .form-contact-us {
+        width: 100%;
+        background-color: #F6F1E7;
+        padding: 30px 20px;
+        border-radius: 10px;
+        font-size: 20px;
+    }
+
+    .content .form-contact-us form {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .content .form-contact-us label {
+        width: 100%;
+        text-align: center;
+        font-weight: 600;
+    }
+
+    .content .form-contact-us input,
+    .content .form-contact-us textarea {
+        background-color: #ffffff;
+        border: 3px solid #579d55;
+        padding: 10px;
+        border-radius: 10px;
+        font-family: inherit;
+    }
+
+    .content .form-contact-us button {
+        background-color: #6C8E6B;
+        border: 1px solid #579d55;
+        padding: 10px;
+        font-size: 20px;
+        cursor: pointer;
+        font-family: inherit;
+        border-radius: 10px;
+        color: #333333;
+    }
+
+    .content .form-contact-us button:hover {
+        background-color: #579d55;
+        color: white;
+    }
+
+    /* --- FORM FEEDBACK --- */
+    .form-feedback {
+        opacity: 0;
+        color: white;
+        font-weight: 700;
+        font-size: 1.15rem;
+        line-height: 1.4;
+        padding: 14px 26px;
+        border-radius: 20px;
+        text-align: center;
+        width: fit-content;
+        margin: 18px auto 0 auto;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+        transform: translateY(-10px);
+        transition: opacity 0.35s ease, transform 0.35s ease;
+        pointer-events: none;
+    }
+
+    /* Visible */
+    .form-feedback.show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Mensaje de SUCCESS */
+    .form-feedback.is-success {
+        background-color: rgba(120, 200, 120, 0.85);
+    }
+
+    /* Mensaje de ERROR */
+    .form-feedback.is-error {
+        background-color: rgba(202, 102, 75, 0.9); 
+    }
+
+    /* --- BACK TO TOP BUTTON --- */
+    .back-to-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 60px;
+        height: 60px;
+        background-color: #6C8E6B;
+        color: white;
+        border-radius: 50%;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+        z-index: 1000;
+        border: none;
+        outline: none;
+        transition: all 0.3s ease;
+    }
+
+    .back-to-top:hover {
+        background-color: #579d55;
+        transform: scale(1.1);
+        opacity: 1;
+    }
+
+    .back-to-top span {
+        margin-bottom: 5px;
+    }
+
+
+    /* --- RESPONSIVE --- */
+    @media (max-width: 900px) {
+        .content {
+            margin: 40px 20px;
+        }
+
+        .content .Título h1 {
+            font-size: 50px;
+            text-align: center;
+        }
+
+        .content .NavAU {
+            flex-direction: column;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .NavAU button {
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .content .member-card {
+            width: 100%;
+            align-self: center;
+        }
+
+        .content .card-header::before {
+            width: 42px;
+            height: 42px;
+            top: -24px;
+        }
+
+        .content .mission-title h3::before,
+        .content .vision-title h3::before {
+            font-size: 30px;
+        }
+
+        #about-section,
+        #mission-section,
+        #team-section,
+        #contact-section {
+            scroll-margin-top: 40px;
+        }
+    }

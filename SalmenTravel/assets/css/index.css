@@ -1,0 +1,165 @@
+    * {
+        cursor: url("../images/salmon.png"), auto !important;
+    }
+
+    body {
+        margin: 0;
+        background-color: #EDE5D0;
+        font-family: 'Jaini Purva', cursive;
+    }
+
+    /* CONTENEDOR PRINCIPAL */
+    .container {
+        width: 95%;
+        margin: 50px auto;
+        background: #EFE2C2;
+        border-radius: 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        padding: 60px 70px;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+        position: relative;
+    }
+
+    /* LÍNEA DEL CUADERNO */
+    .container::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        width: 4px;
+        height: 620px;
+        background: #EAD9B5;
+    }
+
+    /* COLUMNA IZQUIERDA */
+    .left {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .left img {
+        width: 100%;
+        max-width: 500px;
+        border-radius: 12px;
+    }
+
+    /* COLUMNA DERECHA */
+    .right {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 40px;
+        text-align: center;
+    }
+
+    .right h1 {
+        font-size: 3.1rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+        color: #000;
+    }
+
+    /* SUBTÍTULO */
+    .subtitle {
+        font-style: italic;
+        font-size: 1.3rem;
+        margin-bottom: 25px;
+        color: #333;
+    }
+
+    /* DESCRIPCIÓN */
+    .desc {
+        font-size: 1.33rem;
+        margin-bottom: 15px;
+        line-height: 1.6;
+        color: #444;
+    }
+
+    /* BOTÓN */
+    .miniTarjeta {
+        background-color: #F6F1E7;
+        color: #000;
+        font-weight: 700;
+        font-size: 1.2rem;
+        padding: 18px 40px;
+        border-radius: 15px;
+        text-decoration: none;
+        text-align: center;
+        box-shadow: 4px 4px 14px rgba(0,0,0,0.18);
+        width: 70%;
+        align-self: center;
+        margin-top: 15px;
+        transition: 0.25s ease;
+    }
+
+    .miniTarjeta:hover {
+        background-color: #EDE5D0;
+        transform: scale(1.03);
+        box-shadow: 6px 6px 18px rgba(0,0,0,0.22);
+    }
+
+    /* PARA HACER LA PÁGINA RESPONSIVE: */
+    @media (max-width: 992px) {
+
+        .container {
+            grid-template-columns: 1fr;
+            padding: 50px 40px;
+        }
+
+        .container::before {
+            display: none;
+        }
+
+        .right {
+            padding-left: 0;
+        }
+
+        .right h1 {
+            font-size: 2.6rem;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+        }
+
+        .desc {
+            font-size: 1.2rem;
+        }
+
+        .miniTarjeta {
+            width: 80%;
+        }
+    }
+
+    @media (max-width: 576px) {
+
+        .container {
+            padding: 35px 20px;
+            margin: 30px auto;
+        }
+
+        .left img {
+            max-width: 100%;
+        }
+
+        .right h1 {
+            font-size: 2.2rem;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .desc {
+            font-size: 1.1rem;
+        }
+
+        .miniTarjeta {
+            width: 100%;
+            font-size: 1.1rem;
+            padding: 16px 20px;
+        }
+    }

@@ -1,0 +1,367 @@
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        transition: all 0.3s ease;
+    }
+
+    body {
+        background-color: #EDE5D0;
+        font-family: "Josefin Sans", sans-serif;
+    }
+
+    /* Contendor principal */
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Título de la sección */
+    .content .Título {
+        font-family: "Londrina Solid", sans-serif;
+        margin-bottom: 20px;
+    }
+
+    .content .Título h1 {
+        margin-top: 50px;
+        font-weight: 400;
+        font-size: 64px;
+    }
+
+    /* Contendor 3D para el efecto flip */
+    .chat-bot {
+        width: 500px;
+        height: 600px;
+        width: 500px;
+        height: 600px;
+        /* Profundidad para el efecto 3D */
+        perspective: 1000px;
+        position: relative;
+        z-index: 10;
+    }
+
+    /* Tarjeta que rota en 3D */
+    .chat-card {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+    }
+
+    /* Estado de giro */
+    .chat-card.is-flipped {
+        transform: rotateY(180deg);
+    }
+
+    /* Caras frontal y trasera */
+    .card-face {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        /* Oculta la cara posterior */
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* --- FRONT FACE --- */
+    .card-front {
+        background-color: transparent;
+        z-index: 2;
+        align-items: center;
+    }
+
+    /* Botón circular del chatbot */
+    .bot-button {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        padding: 0;
+        border: none;
+        cursor: pointer;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: salmon;
+    }
+
+    /* Imagen dentro del botón */
+    .bot-button img {
+        width: 100%;
+        top: -10px;
+        object-fit: cover;
+        display: block;
+        position: relative;
+    }
+
+    /* Hover del botón */
+    .bot-button:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    /* --- BACK FACE --- */
+    .card-back {
+        background-color: white;
+        transform: rotateY(180deg);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        justify-content: flex-start;
+        outline: 4px solid #B86954;
+        outline-offset: -4px;
+    }
+
+    /* --- CABECERA DEL CHAT*/
+    .chat-header {
+        background-color: #B86954;
+        color: white;
+        width: 100%;
+        min-height: 70px;
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: "Londrina Solid", sans-serif;
+        font-size: 26px;
+        flex-shrink: 0;
+    }
+
+    .chat-header h3 {
+        margin: 0;
+        padding: 0;
+        line-height: 1;
+        transform: translateY(5px);
+    }
+
+    /* Botón de cerrar */
+    .chat-header .close-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        transform: translateY(-5px);
+    }
+
+    .chat-header .close-btn img {
+        width: 24px;
+        height: 24px;
+        object-fit: contain;
+        display: block;
+    }
+
+    .header-container nav a:hover{
+        transform:scale(1.06);
+        text-decoration:underline;
+    }
+
+    /* -- CUERPO DEL CHAT --- */
+    .chat-body {
+        flex-grow: 1;
+        padding: 15px;
+        font-family: "Josefin Sans", sans-serif;
+        background-color: #f2efe9;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+    }
+
+    /* --- MESSAGE BUBBLES --- */
+    .message {
+        max-width: 85%;
+        padding: 8px 14px;
+        border-radius: 12px;
+        font-size: 15px;
+        line-height: 1.4;
+        position: relative;
+        word-wrap: break-word;
+    }
+
+    /* AI Message Style */
+    .message.ai {
+        align-self: flex-start;
+        background-color: #ffffff;
+        color: #333;
+        border-bottom-left-radius: 2px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        border: 1px solid #e0e0e0;
+    }
+
+    .introduction {
+        font-weight: 700;
+        color: #B86954;
+        padding-top: 4px;
+    }
+
+    .message p {
+        margin: 0 0 6px 0;
+    }
+
+    /* User Message Style */
+    .message.user {
+        align-self: flex-end;
+        background-color: #B86954;
+        color: white;
+        border-bottom-right-radius: 2px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Mensaje del bot */
+    .message.ai b {
+        font-weight: 700;
+        color: #B86954;
+    }
+
+    .message.ai ul {
+        margin: 5px 0 5px 20px;
+        padding: 0;
+    }
+
+    .timestamp {
+        display: block;
+        font-size: 10px;
+        margin-top: 5px;
+        opacity: 0.7;
+        text-align: right;
+    }
+
+    /* Indicador de escritura */
+    .typing-indicator {
+        font-size: 12px;
+        color: #888;
+        padding: 5px 15px;
+        font-style: italic;
+        background-color: #f2efe9;
+        display: none;
+        width: 100%;              
+        text-align: center;       
+        align-self: stretch;      
+    }
+
+    /* Footer del chat */
+    .chat-footer {
+        padding: 10px;
+        width: 100%;
+        border-top: 1px solid #ddd;
+        display: flex;
+        gap: 8px;
+        background-color: white;
+        flex-shrink: 0;
+    }
+
+    .chat-footer input {
+        flex-grow: 1;
+        padding: 10px;
+        border-radius: 20px;
+        border: 2px solid #ddd;
+        font-family: "Josefin Sans", sans-serif;
+        outline: none;
+    }
+
+    .chat-footer input:focus {
+        border-color: #B86954;
+    }
+
+    .chat-footer button {
+        padding: 8px 18px;
+        background-color: #B86954;
+        color: white;
+        border: none;
+        border-radius: 20px;
+        font-family: "Londrina Solid", sans-serif;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .chat-footer button:hover {
+        background-color: #a05a46;
+    }
+
+    .chat-footer button:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+    }
+
+    /* Mobile Responsiveness */
+
+    @media (max-width: 900px) {
+
+        .chat-bot {
+            width: 90%;
+            height: 80vh;
+        }
+    }
+
+    @media (max-width: 480px) {
+        /* Contenedor general */
+        .content {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            align-items: stretch;
+        }
+
+        /* Título */
+        .content .Título {
+            margin: 16px 0 8px;
+            display: none;
+        }
+
+        .content .Título h1 {
+            font-size: 32px;
+            margin: 0;
+            padding: 0 16px;
+            display: none;
+        }
+
+        /* El chat pasa a ser una pantalla completa, para que sea responsive correctamente para móvil. */
+        .chat-bot {
+            width: 100%;
+            height: calc(100dvh - 96px); /* espacio para el título */
+            margin: 0;
+            max-width: none;
+            perspective: none;
+        }
+
+        /* Cerramos la cadena de alturas */
+        .chat-card,
+        .card-face,
+        .card-back {
+            width: 100%;
+            height: 100%;
+            border-radius: 0;
+            box-shadow: none;
+            outline: none;
+        }
+
+        /* Layout interno del chat */
+        .card-back {
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* Scroll SOLO en el cuerpo del chat */
+        .chat-body {
+            flex: 1;
+            overflow-y: auto;
+            min-height: 0;
+        }
+    }

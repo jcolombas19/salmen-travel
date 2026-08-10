@@ -1,0 +1,332 @@
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        transition: all 0.3s ease;
+    }
+
+    body {
+        background-color: #EDE5D0;
+    }
+
+    h2 {
+        font-family: "Jaini Purva";
+        font-size: 45px;
+        line-height: 1.1;
+    }
+
+    /* NOTEBOOK SCROLL */
+    .notebook-scroll {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding-bottom: 20px;
+    }
+
+    /* Scrollbar bonito, para que quede a conjunto con la web */
+    .notebook-scroll::-webkit-scrollbar {
+        height: 8px;
+    }
+
+    .notebook-scroll::-webkit-scrollbar-thumb {
+        background: #b8a88a;
+        border-radius: 10px;
+    }
+
+    /* LIBRETA */
+    .notebook-wrapper {
+        position: relative;
+        width: 980px;
+        min-width: 980px;
+        height: 750px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cover-page {
+        position: absolute;
+        height: 700px;
+        border-radius: 15px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    }
+
+    #cover-green {
+        width: 980px;
+        background: #6C8E6B;
+        z-index: 1;
+    }
+
+    #cover-beige {
+        width: 940px;
+        background: #EEDDBC;
+        z-index: 2;
+    }
+
+    #cover-light {
+        width: 900px;
+        background: #FCF1DD;
+        z-index: 3;
+    }
+
+    #cover-top {
+        width: 860px;
+        background: #F6F1E7;
+        z-index: 4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Interior de la libreta */
+    .pages-inside {
+        display: flex;
+        width: 100%;
+        height: 100%;
+    }
+
+    /* Página izquierda */
+    .page-left {
+        width: 50%;
+        background: #F6F1E7;
+        border-top-left-radius: 12px;
+        border-bottom-left-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    }
+
+    .page-left-header {
+        position: relative;
+        width: 100%;
+        margin-bottom: 70px;
+    }
+
+    .title-banner {
+        width: 90%;
+        height: 100px;
+        background: #EEDDBC;
+        box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);
+    }
+
+    .page-title {
+        position: absolute;
+        left: 25px;
+        top: 50px;
+        line-height: 1.15;
+        text-align: center;
+        z-index: 2;
+    }
+
+    /* Contenido página izquierda */
+    .page-left-content {
+        width: 100%;
+        padding: 20px 30px 30px 30px;
+        display: flex;
+        justify-content: center;
+    }
+
+    #imagen_cuaderno {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+    }
+
+    /* Página derecha */
+    .page-right {
+        width: 50%;
+        background: #F6F1E7;
+        border-top-right-radius: 12px;
+        border-bottom-right-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        overflow: hidden;
+    }
+
+    .right-image-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 5px;
+    }
+
+    .right-image-wrapper img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        border-radius: 6px;
+    }
+
+    /* TARJETAS */
+    .empezar-section {
+        max-width: 980px;
+        margin: 50px auto;
+        background: #F6F1E7;
+        border-radius: 20px;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+        padding: 0;
+        overflow: hidden;
+    }
+
+    /* Header tarjetas */
+    .empezar-header {
+        width: 100%;
+        background: #B86954;
+        padding: 20px 0;
+        text-align: center;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+
+    .empezar-header h2 {
+        font-family: "Londrina Solid";
+        font-size: 34px;
+        color: white;
+        margin: 0;
+    }
+
+    .empezar-content {
+        padding: 40px 30px 60px 30px;
+    }
+
+    /* MINI TARJETAS */
+    .mini-card {
+        width: 300px;
+        min-height: 250px;
+        background: #F8EBD1 !important;
+        border-radius: 22px !important;
+        text-decoration: none;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.15);
+        transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .mini-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .mini-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: contain;
+        margin-top: 30px;
+    }
+
+    .mini-card .card-title {
+        font-family: "Londrina Solid";
+        font-size: 26px;
+        margin-top: 10px;
+    }
+
+    /* Washi tape */
+    .washitape {
+        width: 150px;
+        height: 40px;
+        background: #B86954;
+        position: absolute;
+        top: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-bottom: 3px solid rgba(0, 0, 0, 0.08);
+    }
+
+    /* PARA HACER LA WEB RESPONSIVE: */
+
+    @media (max-width: 900px) {
+
+        .notebook-scroll {
+            justify-content: flex-start;
+        }
+
+        .notebook-wrapper {
+            transform: scale(0.9);
+            transform-origin: top left;
+        }
+
+        .mini-card {
+            margin-bottom: 60px;
+        }
+
+        .empezar-content {
+            padding-top: 30px;
+            padding-bottom: 40px;
+        }
+
+        .row.g-6 {
+            row-gap: 30px;
+        }
+    }
+
+    @media (max-width: 430px) {
+
+        .notebook-wrapper {
+            min-width: 860px;
+            transform: scale(0.85);
+        }
+    }
+
+    /* Responsividad de la libreta */
+    @media (max-width: 700px) {
+
+        .notebook-scroll {
+            overflow-x: hidden;
+            overflow-y: visible;
+            justify-content: center;
+            padding-bottom: 0;
+        }
+
+
+        .notebook-wrapper {
+            width: 100%;
+            min-width: 0;
+            height: auto;
+            transform: none;
+        }
+
+        #cover-green,
+        #cover-light,
+        #cover-beige {
+            display: none;
+        }
+
+        #cover-top {
+            position: relative;
+            width: min(860px, 100%);
+            height: auto;
+            padding: 16px;
+        }
+
+        .pages-inside {
+            flex-direction: column;
+            height: auto;
+            gap: 18px;
+        }
+
+        .page-left,
+        .page-right {
+            width: 100%;
+            height: auto;
+            padding: 18px 16px;
+        }
+
+        .page-left {
+            border-right: none;
+            border-bottom: 2px dashed rgba(0, 0, 0, 0.10);
+            padding-bottom: 22px;
+        }
+
+        .page-right {
+            padding-top: 22px;
+        }
+    }

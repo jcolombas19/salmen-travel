@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SalmenTravel+ - Clima del destino</title>
+
+    <!-- Icono de SalmenTavel+ en el navegador -->
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/images/SalmenTravelLogoNaranja.png">
+
+    <!-- CSS de Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Fuentes usados en la web -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@300;400;900&family=Jaini+Purva&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/clima-detalle.css">
+    <link rel="stylesheet" href="assets/css/menu.css">
+
+    <!-- JS -->
+    <script src="assets/js/menuArriba.js" type="module"></script>
+    <script src="assets/js/clima-detalle.js" type="module"></script>
+</head>
+
+<body>
+
+    <header>
+        <section class="header-container">
+
+            <!-- ICONO HAMBURGUESA (solo aparece en pantallas pequeñas) -->
+            <div id="hamburguer" class="menu-icon">
+                <img src="assets/images/hamburger_menu.png" alt="menú hamburguesa">
+            </div>
+
+            <!-- NAV NORMAL (en tamaño móvil se oculta) -->
+            <nav id="mainNav">
+                <a href="home.html">Home</a>
+                <a href="viajes.html">Viajes</a>
+                <a href="clima.html">Clima</a>
+                <a href="aboutUs.html">Sobre Nosotros</a>
+                <a href="sugerenciasIA.html">Sugerencias con IA</a>
+            </nav>
+
+            <a href="home.html">
+                <img src="assets/images/SalmenTravelLogo.png" alt="Logo de salmen travel">
+            </a>
+        </section>
+
+        <!-- MENÚ DESPLEGABLE MÓVIL -->
+        <section id="menu" class="mobile-menu">
+            <button id="closeMenuButton" class="close-btn">
+                <img src="assets/images/x_cerrar_menu.png" alt="Cerrar menú">
+            </button>
+
+            <a href="home.html">Home</a>
+            <a href="viajes.html">Viajes</a>
+            <a href="clima.html">Clima</a>
+            <a href="aboutUs.html">Sobre Nosotros</a>
+            <a href="sugerenciasIA.html">Sugerencias con IA</a>
+        </section>
+    </header>
+
+    <main>
+
+        <!-- BOTÓN VOLVER a la página de clima general-->
+        <a href="clima.html" class="volver-btn">
+            <img src="assets/images/atras.png" alt="volver">
+            Volver a tus climas
+        </a>
+
+        <!-- CONTENEDOR PRINCIPAL, en donde se encuentran todos los elementos de esta página-->
+        <section class="detalle-clima">
+
+            <!-- HEADER del DESTINO a donde el usuario desea ir-->
+            <div class="detalle-header">
+                <!-- Aquí, el JS insertará: Ciudad - País -->
+                <h1 class="ciudad-nombre"></h1>
+            </div>
+
+            <!-- Apartado de CLIMA DE HOY -->
+            <section class="clima-hoy">
+                <div class="hoy-wrapper">
+
+                    <!-- Washitape de arriba de la tarjeta del clima de hoy -->
+                    <div class="washi washi-top"></div>
+
+                    <!-- TARJETA DE HOY-->
+                    <div class="hoy-card">
+
+                        <!-- Interior de la TARJETA DE HOY, donde están los siguientes elementos: -->
+                        <div class="hoy-card-inner">
+
+                            <!-- FECHA ACTUAL -->
+                            <p class="hoy-fecha"></p>
+
+                            <!-- ICONO DEL CLIMA -->
+                            <img class="hoy-icon" alt="icono del clima">
+
+                            <!-- ESTADO DEL CIELO -->
+                            <p class="hoy-estado"></p>
+
+                            <!-- TEMPERATURA -->
+                            <p class="hoy-temp"></p>
+                        </div>
+                    </div>
+
+                    <!-- Washitape de abajo de la tarjeta del clima de hoy -->
+                    <div class="washi washi-bottom"></div>
+                </div>
+
+            </section>
+
+            <!-- Apartado de PRÓXIMOS DÍAS -->
+            <section class="clima-proximos">
+
+                <!-- TÍTULO del apartado de PRÓXIMOS DÍAS -->
+                <div class="proximos-header">
+                    <h3>Previsión en los próximos días</h3>
+                </div>
+
+                <!-- CONTENEDOR DINÁMICO -->
+                <!-- JS genera aquí las tarjetas -->
+                <div class="proximos-content"></div>
+            </section>
+
+        </section>
+
+    </main>
+
+</body>
+</html>

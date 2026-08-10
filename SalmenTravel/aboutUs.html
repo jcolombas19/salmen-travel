@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SalmenTravel+ - Sobre Nosotros</title>
+
+    <!-- Icono de SalmenTavel+ en el navegador -->
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/images/SalmenTravelLogoNaranja.png">
+
+    <!-- Fuentes usados en la web -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chela+One&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Josefin+Sans:ital@0;1&family=Londrina+Solid:wght@100;300;400;900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Jaini+Purva&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/home.css">
+    <link rel="stylesheet" href="./assets/css/menu.css">
+    <link rel="stylesheet" href="./assets/css/aboutUs.css">
+
+    <!-- JS -->
+    <script src="assets/js/menuArriba.js" type="module"></script>
+    <script src="assets/js/aboutUs.js" type="module"></script>
+
+</head>
+
+<body>
+
+    <header>
+        <section class="header-container">
+
+            <!-- ICONO HAMBURGUESA (solo aparece en pantallas pequeñas) -->
+            <div id="hamburguer" class="menu-icon">
+                <img src="assets/images/hamburger_menu.png" alt="menú hamburguesa">
+            </div>
+
+            <!-- NAV NORMAL (en tamaño móvil se oculta) -->
+            <nav id="mainNav">
+                <a href="home.html">Home</a>
+                <a href="viajes.html">Viajes</a>
+                <a href="clima.html">Clima</a>
+                <a href="aboutUs.html">Sobre Nosotros</a>
+                <a href="sugerenciasIA.html">Sugerencias con IA</a>
+            </nav>
+
+            <a href="home.html">
+                <img src="assets/images/SalmenTravelLogo.png" alt="Logo de salmen travel">
+            </a>
+        </section>
+
+        <!-- MENÚ DESPLEGABLE MÓVIL -->
+        <section id="menu" class="mobile-menu">
+            <button id="closeMenuButton" class="close-btn">
+                <img src="assets/images/x_cerrar_menu.png" alt="Cerrar menú">
+            </button>
+
+            <a href="home.html">Home</a>
+            <a href="viajes.html">Viajes</a>
+            <a href="clima.html">Clima</a>
+            <a href="aboutUs.html">Sobre Nosotros</a>
+            <a href="sugerenciasIA.html">Sugerencias con IA</a>
+        </section>
+    </header>
+
+    <main>
+        <section class="content">
+
+            <div class="Título">
+                <h1> Quiénes somos </h1>
+            </div>
+
+            <!-- Zona de navegación del usuario por el apartado de About Us. -->
+            <nav class="NavAU">
+                <a href="#about-section"><button>About Us</button></a>
+                <a href="#mission-section"><button>Misión y Visión</button></a>
+                <a href="#team-section"><button>Nuestro Equipo</button></a>
+                <a href="#contact-section"><button>¡Contáctanos!</button></a>
+            </nav>
+
+            <!-- Sección del About Us en donde se introduce al usuario a SalmenTravel+ -->
+            <section class="info-card" id="about-section">
+                <div class="card-header">
+                    <h2>Nuestro viaje con SalmenTravel+</h2>
+                </div>
+                <div class="card-body">
+                    <div class="text-box">
+                        <p>
+                            En SalmenTravel+ creemos que cada viaje empieza con una idea, y que planificarlo debería ser tan
+                            divertido como vivirlo 🌿✨
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección del About Us en donde se introduce al usuario a la misión y visión de SalmenTravel+. -->
+            <section class="info-card" id="mission-section">
+                <div class="card-header">
+                    <h2> Misión y Visión SalmenTravel+ </h2>
+                </div>
+                <div class="card-body gap-20">
+                    <div class="mission-card">
+                        <div class="mission-title">
+                            <h3>Misión</h3>
+                        </div>
+                        <div class="mission-text">
+                            <p> Ayudarte a organizar tus aventuras de forma sencilla, creativa y personalizada. </p>
+                        </div>
+                    </div>
+
+                    <div class="vision-card">
+                        <div class="vision-title">
+                            <h3>Visión</h3>
+                        </div>
+                        <div class="vision-text">
+                            <p> Inspirar a más viajeros a descubrir el mundo con curiosidad y sin complicaciones. </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección del About Us en donde se introduce al usuario al equipo de SalmenTravel+. -->
+            <section class="info-card" id="team-section">
+                <div class="card-header">
+                    <h2>Nuestro Equipo</h2>
+                </div>
+
+                <div class="card-body flex-col gap-20">
+
+                    <div class="text-box">
+                        <p class="espacio-abajo">
+                            Este viaje no habría sido posible sin el trabajo y la ilusión de todo el equipo detrás de
+                            SalmenTravel+:
+                        </p>
+
+                        <div class="team-members-wrapper">
+                            <div class="member-card">
+                                <img src="./assets/images/gato_pixelado_XD.png" alt="Miembro del equipo 1">
+                                <h4>Jhon Alexander</h4>
+                            </div>
+
+                            <div class="member-card">
+                                <img src="./assets/images/pato_pokemon.png" alt="Miembro del equipo 2">
+                                <h4>Júlia Salom Colombás</h4>
+                            </div>
+
+                            <div class="member-card">
+                                <img src="./assets/images/capibara.png" alt="Miembro del equipo 3">
+                                <h4>Alba María Ruiz Claver</h4>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Sección del About Us en donde se introduce al usuario a contactar con el equipo detrás de SalmenTravel+. -->
+            <section class="info-card" id="contact-section">
+                <div class="card-header">
+                    <h2> ¡Contacta con nosotros! </h2>
+                </div>
+                <div class="card-body flex-col gap-20">
+
+                    <div class="text-box">
+                        <p> Cuéntanos tus ideas o inquietudes, ¡nos encantará leerte! 💬✨ </p>
+                        <p> El equipo de SalmenTravel+ responderá lo antes posible. </p>
+                    </div>
+
+                    <section class="form-contact-us">
+                        <form id="contact-form">
+                            <label for="name">Nombre</label>
+                            <input type="text" id="name" name="name" required>
+
+                            <label for="surname">Apellidos</label>
+                            <input type="text" id="surname" name="surname" required>
+
+                            <label for="email">Correo Electrónico</label>
+                            <input type="email" id="email" name="email" required>
+
+                            <label for="message">Mensaje</label>
+                            <textarea id="message" name="message" required></textarea>
+
+                            <button type="submit" id="submit-btn">Enviar Mensaje</button>
+                            <div id="form-status" class="form-feedback"></div>
+                        </form>
+                    </section>
+                </div>
+            </section>
+
+        </section>
+    </main>
+
+    <!-- Botón para hacer que el usuario pueda ir arriba de la página en cualquier momento. -->
+    <button class="back-to-top" aria-label="Volver arriba">
+        <!-- Icono de flecha hacia arriba usando entidad HTML -->
+        <p>&#8679;</p>
+    </button>
+</body>
+
+</html>

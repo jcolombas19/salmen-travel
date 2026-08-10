@@ -1,0 +1,126 @@
+    /* HEADER DE TODAS LAS PÁGINAS DE LA WEB */
+    header {
+        position: fixed;
+        z-index: 1000000;
+        top: 0;
+        left: 0;
+        margin: 0;
+        background-color: #6C8E6B;
+        width: 100%;
+        height: 120px;
+    }
+
+    .header-container {
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 40px;
+    }
+
+    .header-container img {
+        width: 200px;
+        object-fit: contain;
+    }
+
+    .header-container nav {
+        display: flex;
+        gap: 70px;
+    }
+
+    .header-container nav a {
+        font-size: 36px;
+        text-decoration: none;
+        color: white;
+        font-family: "Londrina Solid";
+    }
+
+    .header-container nav a:hover {
+        transform: scale(1.06);
+        text-decoration: underline;
+    }
+
+    .menu-icon {
+        display: none;
+        cursor: pointer;
+    }
+
+    .menu-icon img {
+        width: 40px;
+        height: auto;
+    }
+
+    /* Panel del menú que se desliza */
+    .mobile-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #6C8E6B;
+        padding: 90px 20px 40px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        z-index: 10;
+        transform: translateX(-100%);
+        opacity: 0;
+        /* Para evitar que el usuario no pueda clicar una vez este menú no está abierto*/
+        pointer-events: none;
+        transition: transform 0.4s ease, opacity 0.3s ease;
+    }
+
+    .mobile-menu.show {
+        transform: translateX(0);
+        opacity: 1;
+        /* Una vez el menú se abre, el usuario pueda clicar los enlaces que hay en este */
+        pointer-events: auto;
+    }
+
+    /* Botón cerrar */
+    .close-btn {
+        position: absolute;
+        top: 25px;
+        right: 20px;
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        width: 35px;
+        height: 35px;
+        z-index: 20;
+    }
+
+    .close-btn img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    body {
+        padding-top: 110px;
+    }
+
+    /* Enlaces del menú */
+    .mobile-menu a {
+        font-size: 28px;
+        font-family: "Londrina Solid";
+        color: white;
+        text-decoration: none;
+        padding-left: 10px;
+    }
+
+    .mobile-menu a:hover {
+        text-decoration: underline;
+    }
+
+    /* Para hacer el menú de la web responsive: */
+    @media (max-width: 900px) {
+        .header-container nav {
+            display: none;
+        }
+
+        .menu-icon {
+            display: block;
+        }
+    }
