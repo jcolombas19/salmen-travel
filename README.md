@@ -53,3 +53,7 @@ REST APIs are consumed with the Fetch API, and all data lives in
      (create a free account, an email service and two templates -
      team notification and client confirmation - then copy their IDs)
 3. Serve the folder with any static server (e.g. the VS Code **Live Server** extension) and open `index.html`
+
+## 👩‍💻 Team
+
+Made with ☕ by **Júlia Salom**, **Jhon Alexander Herrada** and **Alba María Ruiz**
